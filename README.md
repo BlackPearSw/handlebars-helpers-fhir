@@ -1,3 +1,5 @@
+![Handlebars](https://raw.githubusercontent.com/BlackPearSw/handlebars-helpers-fhir/develop/logo.png)
+
 # handlebars-helpers-fhir
 Helper functions for the [Handlebars](https://handlebarsjs.com/) templating engine using [fhirpath](https://github.com/jmandel/fhirpath.js)
 to reference [HL7 FHIR](http://hl7.org/fhir/) resources from within templates.
@@ -134,5 +136,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Acknowledgements
 ----------------
 Supported by [Black Pear Software](www.blackpear.com)
-
-![Handlebars](logo.png)
