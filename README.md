@@ -1,4 +1,4 @@
-![Handlebars](./logo.png)
+![Handlebars](https://raw.githubusercontent.com/BlackPearSw/handlebars-helpers-fhir/develop/logo.png)
 
 # handlebars-helpers-fhir
 Helper functions for the [Handlebars](https://handlebarsjs.com/) templating engine using [fhirpath](https://github.com/jmandel/fhirpath.js)
