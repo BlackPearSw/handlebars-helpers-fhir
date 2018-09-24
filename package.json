@@ -1,0 +1,41 @@
+{
+  "name": "handlebars-helpers-fhir",
+  "version": "0.0.2",
+  "description": "Helper functions for the Handlebars templating engine using fhirpath to reference HL7 FHIR resources from within templates.",
+  "keywords": [
+    "HL7",
+    "FHIR",
+    "fhirpath",
+    "Handlebars"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlackPearSw/handlebars-helpers-fhir.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BlackPearSw/fhirball/issues"
+  },
+  "license": "LGPL-3.0+",
+  "contributors": [
+    {
+      "name": "Dunmail Hodkinson",
+      "email": "dunmail@blackpear.com"
+    }
+  ],
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "fhirpath.js": "^0.0.6",
+    "handlebars-utils": "^1.0.6"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "handlebars": "^4.0.12",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha index.spec.js"
+  }
+}
