@@ -21,7 +21,7 @@ Register helpers with handlebars
 
 ## Use
 
-### `#if-fhir`
+### #if-fhir
 The `if-fhir` block helper will conditionally render a block based on
 a fhirpath expression. If the fhirpath expression returns an empty
 array, Handlebars will not render the block.
@@ -40,7 +40,7 @@ The helper can render an `{{else}}` section.
 {{/if-fhir}}
 ````
 
-### `#unless-fhir`
+### #unless-fhir
 The `unless-fhir` block helper will conditionally render a block based on
 a fhirpath expression. If the fhirpath expression returns an empty
 array, Handlebars will render the block.
@@ -50,7 +50,7 @@ array, Handlebars will render the block.
 {{/unless-fhir}}
 ````
 
-### `#each-fhir`
+### #each-fhir
 The `each-fhir` block helper will render a block for each item found
  using a fhirpath expression.
 ````
