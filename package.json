@@ -1,6 +1,6 @@
 {
   "name": "handlebars-helpers-fhir",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Helper functions for the Handlebars templating engine using fhirpath to reference HL7 FHIR resources from within templates.",
   "keywords": [
     "HL7",
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/BlackPearSw/fhirball/issues"
   },
-  "license": "LGPL-3.0+",
+  "license": "MIT",
   "contributors": [
     {
       "name": "Dunmail Hodkinson",
