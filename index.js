@@ -1,4 +1,4 @@
-const fhirpath = require('fhirpath.js');
+const fhirpath = require('fhirpath');
 fhirpath.debug = false;
 const utils = require ('handlebars-utils');
 
