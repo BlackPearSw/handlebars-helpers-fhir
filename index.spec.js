@@ -1,7 +1,8 @@
 'use strict';
 
 const handlebars = require('handlebars');
-require('./index').registerWith(handlebars);
+const helpers = require('./index');
+helpers.registerWith(handlebars);
 
 const should = require('chai').should();
 
@@ -404,7 +405,35 @@ describe('handlebars-helpers-fhir', () => {
             result.should.equal('Value is: b');
         });
 
-        it('should render block using a bundled resource (DSTU1 bundle syntax)', () => {
+        it('should render block using a contained resource', () => {
+            let template = "{{#resolve-fhir . expression='Foo.bar.reference'}}Value is: {{val}}{{/resolve-fhir}}";
+            let compiledTemplate = handlebars.compile(template);
+
+            let resource = {
+                resourceType: 'Foo',
+                bar: {
+                    reference: 'Bar/1'
+                },
+                val: 'a',
+                contained: [
+                    {
+                        resourceType: 'Bar',
+                        id: '1',
+                        val: 'b'
+                    }
+                ]
+            };
+
+            let result = compiledTemplate(resource);
+
+            should.exist(result);
+            result.should.equal('Value is: b');
+        });
+
+        it('should render block using a custom bundled resource (DSTU1 bundle syntax)', () => {
+            helpers.useOptions({
+                location: ['content.entry.content', 'entry.content', 'entry.resource', 'contained']
+            });
             let template = "{{#resolve-fhir . expression='entry.content.Foo.bar.reference'}}Value is: {{val}}{{/resolve-fhir}}";
             let compiledTemplate = handlebars.compile(template);
 
@@ -427,31 +456,6 @@ describe('handlebars-helpers-fhir', () => {
                         }
                     }
 
-                ]
-            };
-
-            let result = compiledTemplate(resource);
-
-            should.exist(result);
-            result.should.equal('Value is: b');
-        });
-
-        it('should render block using a contained resource', () => {
-            let template = "{{#resolve-fhir . expression='Foo.bar.reference'}}Value is: {{val}}{{/resolve-fhir}}";
-            let compiledTemplate = handlebars.compile(template);
-
-            let resource = {
-                resourceType: 'Foo',
-                bar: {
-                    reference: 'Bar/1'
-                },
-                val: 'a',
-                contained: [
-                    {
-                        resourceType: 'Bar',
-                        id: '1',
-                        val: 'b'
-                    }
                 ]
             };
 

@@ -56,14 +56,24 @@ function makeResolve() {
         let id = reference.split('/')[1];
 
         let criteria = `where(resourceType=\'${type}\').where(id=\'${id}\')`;
-        let expression = `entry.content.${criteria}|entry.resource.${criteria}|contained.${criteria}`;
+        let expression = config.location
+            .map((item)=>{
+                return `${item}.${criteria}`;
+            })
+            .join('|');
         let match = fhirpath.evaluate(options.data.root, expression)[0];
 
         return match ? options.fn(match) : options.inverse();
     }
 }
 
-//TODO: unless FHIR
+var config = {
+    location: ['entry.resource', 'contained']
+};
+
+module.exports.useOptions = function(options){
+    config = options
+};
 
 module.exports.registerWith = function (handlebars) {
     handlebars.registerHelper('if-fhir', makeIf());
