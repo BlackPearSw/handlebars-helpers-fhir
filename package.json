@@ -1,6 +1,6 @@
 {
   "name": "handlebars-helpers-fhir",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Helper functions for the Handlebars templating engine using fhirpath to reference HL7 FHIR resources from within templates.",
   "keywords": [
     "HL7",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.7.6",
     "mocha": "^5.2.0"
   },
   "scripts": {
